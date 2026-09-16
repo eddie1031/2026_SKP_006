@@ -93,3 +93,84 @@ st.dataframe(
     sales,
     hide_index=True,
 )
+
+st.write('---')
+
+st.table(sales)
+
+st.write('---')
+
+image = np.zeros(
+    (200, 400, 3),
+    dtype=np.uint8,
+)
+
+image[:, :200] = [
+    80,140,220
+]
+
+image[:, 200:] = [
+    1,
+    200,
+    150
+]
+
+st.image(
+    image,
+    caption='Numpy 배열로 그린 멋진 그림'
+)
+# st.caption('Numpy 배열로 그린 멋진 그림')
+
+st.write('---')
+
+st.image(
+    'pizza.jpg',
+    width=200,
+    caption='맛있는_피자.jpg'
+)
+
+st.write('---')
+
+st.title('수식')
+st.latex(r'p = 3.141592')
+
+st.latex(r"""
+\bar{x}
+=
+\frac{1}{n}
+\sum_{i=1}^{n} x_i
+""")
+
+st.write('---')
+
+st.title('코드 실행 과정 확인')
+
+with st.echo():
+    numbers = [ 10, 20, 30 ]
+
+    total = sum(numbers)
+
+    st.write(f'합계: {total}')
+
+st.write('---')
+
+st.info('데이터는 매일 오전 9시에 갱신됩니다.')
+st.success('데이터는 매일 오전 9시에 갱신됩니다.')
+st.warning('데이터는 매일 오전 9시에 갱신됩니다.')
+st.error('데이터는 매일 오전 9시에 갱신됩니다.')
+
+st.write('---')
+
+score = 100
+
+st.title('학생 성적 확인')
+st.write(
+    f'점수: {score}'
+)
+
+if score >= 90:
+    st.success('멋져')
+elif score >= 80:
+    st.info('괜찮아요')
+else:
+    st.warning('힘내세요')
