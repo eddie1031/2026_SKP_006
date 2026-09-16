@@ -58,3 +58,70 @@ regional_data = pd.DataFrame({
 })
 
 st.title('지역별 월 매출')
+
+st.line_chart(
+    data=regional_data,
+    x='월',
+    y=['부산', '대전']
+)
+
+st.bar_chart(data=data,x='월',y='매출')
+
+products = pd.DataFrame({
+    '상품': [
+        '노트북',
+        '모니터',
+        '키보드',
+        '마우스',
+    ],
+    '실제매출': [
+        15_000_000,
+        8_500_000,
+        4_200_000,
+        2_700_000,
+    ],
+    '목표매출': [
+        14_000_000,
+        9_000_000,
+        5_000_000,
+        3_000_000,
+    ]
+})
+
+st.bar_chart(
+    data=products,
+    x='상품',
+    y=[
+        '실제매출',
+        '목표매출'
+    ],
+    stack=False,
+    horizontal=True,
+)
+
+traffic = pd.DataFrame({
+    '월': [
+        '1월',
+        '2월',
+        '3월',
+        '4월',
+        '5월',
+        '6월',
+    ],
+    '사용량': [
+        320,
+        380,
+        360,
+        450,
+        510,
+        580,
+    ]
+})
+
+st.title('월별 서비스 사용량')
+st.area_chart(
+    data=traffic,
+    x='월',
+    y='사용량'
+)
+
