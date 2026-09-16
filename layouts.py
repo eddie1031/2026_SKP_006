@@ -76,11 +76,6 @@ with st.sidebar:
 
 st.title('스마트 항만 대시보드')
 
-df_area = st.container(border=True)
-
-with df_area:
-    st.dataframe(filtered, hide_index=True)
-
 
 data = pd.DataFrame({
     '상품': [
@@ -169,3 +164,7 @@ with st.expander('자세히보기'): # , expanded=True):
     st.write('Super Ultra Mega Alpha detailed description')
     st.latex(r'\bar{x} = 10')
 
+df_area = st.container(border=True)
+
+with df_area:
+    st.dataframe(filtered, hide_index=True)
